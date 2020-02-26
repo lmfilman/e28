@@ -15,7 +15,7 @@ let app = new Vue({
 
       this.listCount -= oldQuantity;
       this.list[this.itemName] = this.itemQuantity;
-      this.listCount += parseInt(this.itemQuantity);
+      this.listCount += this.itemQuantity;
 
       this.itemQuantity = '';
       this.itemName = '';

@@ -9,7 +9,7 @@
   <body>
     <div id='app' v-cloak>
       <h1>Shopping List</h1>
-      <label>Qty<input type='text' v-model='itemQuantity'></label>
+      <label>Qty<input type='text' v-model.number='itemQuantity'></label>
       <label>Item<input type='text' v-model='itemName' v-on:keyup.enter='addItem'></label>
       <button v-on:click='addItem'>Add</button>
       <div v-if='listCount == 0'>
