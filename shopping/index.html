@@ -9,15 +9,16 @@
   <body>
     <div id='app' v-cloak>
       <h1>Shopping List</h1>
-      <label>Item<input type='text' v-model='item'></label>
-      <button v-on:click='list.push(item)'>Add</button>
-      <div v-if='list.length == 0'>
+      <label>Qty<input type='text' v-model='itemQuantity'></label>
+      <label>Item<input type='text' v-model='itemName' v-on:keyup.enter='addItem'></label>
+      <button v-on:click='addItem'>Add</button>
+      <div v-if='listCount == 0'>
         <i>You have no items on your list.</i>
       </div>
       <div v-else>
-        <p>Item count: {{list.length}}</p>
+        <p>Item count: {{listCount}}</p>
         <ul>
-          <li v-for='i in list'>{{ i }}</li>
+          <li v-for="(quantity, name) in list">{{quantity}} x {{name}}</li>
         </ul>
       </div>
     </div>
