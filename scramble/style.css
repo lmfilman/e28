@@ -1,0 +1,11 @@
+.lost {
+  color: red;
+}
+
+.tie {
+  color: black;
+}
+
+.won {
+  color: green;
+}

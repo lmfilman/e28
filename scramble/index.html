@@ -1,0 +1,34 @@
+<html lang='en'>
+  <head>
+    <title>Word Scramble</title>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
+    <script src='index.js' defer></script>
+  </head>
+  <body>
+    <div id='app' v-cloak>
+      <h1>Word Scramble</h1>
+      <div v-if='!gameInitiated'>
+        <label>Enter your player name<input type='text' v-model='playerName'></label>
+        <button v-on:click='initGame'>Let's play!</button>
+      </div>
+      <div v-else>
+        <p>Game on, {{playerName}}!</p>
+
+        <p>Your mystery word is: {{mysteryWord}}</p>
+
+        <p>Hint: <i>{{hint}}</i></p>
+
+        <label>Your guess<input type='text' v-model.lazy='playerGuess'></label>
+        <button v-on:click='submitGuess'>Submit guess</button>
+        <div class='won' v-if='guessIsSubmitted && outcome'>
+          You got it! Nice work. <button v-on:click='playAgain'>Play again</button>
+        </div>
+        <div class='lost' v-else-if='guessIsSubmitted'>
+          Sorry, that's not correct. Please try again.
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
