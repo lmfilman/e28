@@ -20,14 +20,12 @@
 
         <p>Hint: <i>{{hint}}</i></p>
 
-        <label>Your guess<input type='text' v-model.lazy='playerGuess'></label>
+        <label>Your guess<input type='text' v-model='playerGuess'></label>
         <button v-on:click='submitGuess'>Submit guess</button>
-        <div class='won' v-if='guessIsSubmitted && outcome'>
-          You got it! Nice work. <button v-on:click='playAgain'>Play again</button>
-        </div>
-        <div class='lost' v-else-if='guessIsSubmitted'>
-          Sorry, that's not correct. Please try again.
-        </div>
+        <br/>
+        <div v-bind:class="{ won: playerWon, lost: !playerWon }" class='result' v-if='guessIsSubmitted'>
+          {{outcomeText}}
+          <button v-if='playerWon' v-on:click='playAgain'>Play again</button>
       </div>
     </div>
   </body>

@@ -1,11 +1,12 @@
 .lost {
-  color: red;
-}
-
-.tie {
-  color: black;
+  background-color: red;
 }
 
 .won {
-  color: green;
+  background-color: green;
+}
+
+.result {
+  display:inline-block;
+  color: white;
 }
