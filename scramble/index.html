@@ -24,12 +24,6 @@
         <button v-on:click='submitGuess'>Submit guess</button>
         <br/>
         <div v-if='guessIsSubmitted'>
-          <div v-bind:class="{ won: playerWon, lost: !playerWon }" class='result' v-if='guessIsSubmitted'>
-            {{outcomeText}}
-            <button v-if='playerWon' v-on:click='playAgain'>Play again</button>
-          </div>
-
-          <!-- WEEK 6 addition -->
           <result-detail v-bind:player-won='playerWon' v-on:play-again='playAgain($event)'>
             <template v-slot:outcome>{{outcomeText}}</template>
           </result-detail>
