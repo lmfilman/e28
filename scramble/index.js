@@ -1,3 +1,18 @@
+Vue.component('result-detail', {
+    template: `
+      <div v-bind:class="{ won: playerWon, lost: !playerWon }" class='result'>
+        <slot name='outcome'></slot>
+        <button v-if='playerWon' v-on:click="$emit('play-again')">Play again</button>
+      </div>
+    `,
+    props: {
+      playerWon: {
+        type: Boolean,
+        default: false
+      }
+    }
+});
+
 let app = new Vue({
   el: '#app',
   data: {
