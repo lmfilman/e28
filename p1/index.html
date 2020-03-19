@@ -1,14 +1,23 @@
 <html lang='en'>
   <head>
-    <title>Vue App</title>
+    <title>Rock Paper Scissors</title>
     <meta charset='utf-8'>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
     <script src='index.js' defer></script>
   </head>
   <body>
-    <div id='app'>
-      <h1>P1</h1>
+    <div id='app' v-cloak>
+      <p>Select one of the following:</p>
+      <button id='rock' v-on:click='selectChoice'>Rock</button>
+      <button id='paper' v-on:click='selectChoice'>Paper</button>
+      <button id='scissors' v-on:click='selectChoice'>Scissors</button>
+
+      <div v-if='gameStarted'>
+        <p>You chose: {{playerChoice}}</p>
+        <p>The computer chose: {{randomChoice}}</p>
+        <p v-bind:class="{ won: outcome > 0, lost: outcome < 0 }">{{outcomeDescription}}</p>
+      </div>
     </div>
   </body>
 </html>
