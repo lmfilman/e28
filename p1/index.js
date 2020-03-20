@@ -12,6 +12,28 @@ Vue.component('choice-selector', {
   }
 });
 
+Vue.component('round-displayer', {
+  template: `
+    <div>
+      Round {{roundNumber}}: {{ roundResult }}
+
+      <div v-if='roundResult > 0'>
+        Player won
+      </div>
+      <div v-else-if='roundResult < 0'>
+        Computer won
+      </div>
+      <div v-else>
+        Player and Computer tied
+      </div>
+    </div>
+  `,
+  props: {
+    roundNumber: Number,
+    roundResult: Number
+  }
+});
+
 let app = new Vue({
   el: '#app',
   data: {

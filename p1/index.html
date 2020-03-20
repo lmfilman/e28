@@ -29,17 +29,7 @@
         History
         <ul>
           <li v-for='(value, index) in history'>
-            Round {{index + 1}}: {{ value }}
-
-            <div v-if='value > 0'>
-              Player won
-            </div>
-            <div v-else-if='value < 0'>
-              Computer won
-            </div>
-            <div v-else>
-              Player and Computer tied
-            </div>
+            <round-displayer v-bind:round-number='index + 1' v-bind:round-result='value'></round-displayer>
           </li>
         </ul>
       </div>
