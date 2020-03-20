@@ -9,14 +9,39 @@
   <body>
     <div id='app' v-cloak>
       <p>Select one of the following:</p>
-      <button id='rock' v-on:click='selectChoice'>Rock</button>
-      <button id='paper' v-on:click='selectChoice'>Paper</button>
-      <button id='scissors' v-on:click='selectChoice'>Scissors</button>
+      <div v-for="choice in choices">
+        <choice-selector v-bind:choice='choice' v-on:select-choice='selectChoice($event)'></choice-selector>
+      </div>
 
       <div v-if='gameStarted'>
         <p>You chose: {{playerChoice}}</p>
         <p>The computer chose: {{randomChoice}}</p>
         <p v-bind:class="{ won: outcome > 0, lost: outcome < 0 }">{{outcomeDescription}}</p>
+      </div>
+      <div>
+        <button v-on:click='resetGame'>Reset</button>
+      </div>
+      <div>
+        Player score: {{playerScore}}
+        Computer score: {{computerScore}}
+      </div>
+      <div>
+        History
+        <ul>
+          <li v-for='(value, index) in history'>
+            Round {{index + 1}}: {{ value }}
+
+            <div v-if='value > 0'>
+              Player won
+            </div>
+            <div v-else-if='value < 0'>
+              Computer won
+            </div>
+            <div v-else>
+              Player and Computer tied
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </body>
