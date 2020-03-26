@@ -8,30 +8,44 @@
   </head>
   <body>
     <div id='app' v-cloak>
-      <p>Select one of the following:</p>
-      <div v-for="choice in choices">
-        <choice-selector v-bind:choice='choice' v-on:select-choice='selectChoice($event)'></choice-selector>
-      </div>
-
-      <div v-if='gameStarted'>
-        <p>You chose: {{playerChoice}}</p>
-        <p>The computer chose: {{randomChoice}}</p>
-        <p v-bind:class="{ won: outcome > 0, lost: outcome < 0 }">{{outcomeDescription}}</p>
-      </div>
-      <div>
+      <h1>Rock Paper Scissors!</h1>
+      <div class='button'>
         <button v-on:click='resetGame'>Reset</button>
       </div>
-      <div>
-        Player score: {{playerScore}}
-        Computer score: {{computerScore}}
-      </div>
-      <div>
-        History
-        <ul>
-          <li v-for='(value, index) in history'>
-            <round-displayer v-bind:round-number='index + 1' v-bind:round-result='value'></round-displayer>
-          </li>
-        </ul>
+      <div class="row">
+        <div class="column" style="background-color:#aaa; height:300px;">
+          <p><b>Select one of the following:</b></p>
+          <div v-for="choice in choices">
+            <choice-selector v-bind:choice='choice' v-on:select-choice='selectChoice($event)'></choice-selector>
+          </div>
+          <div v-if='gameStarted'>
+            <p>You chose: {{playerChoice}}</p>
+            <p>The computer chose: {{randomChoice}}</p>
+            <p v-bind:class="{ won: outcome > 0, lost: outcome < 0 }">{{outcomeDescription}}</p>
+          </div>
+        </div>
+        <div class="column" style="background-color:#bbb;">
+          <h2>Game History</h2>
+          <hr/>
+          <div>
+            Player: {{playerScore}}
+            Computer: {{computerScore}}
+          </div>
+          <hr/>
+          <table>
+            <thead>
+              <tr>
+                <th>Round</th>
+                <th>Winner</th>
+              </tr>
+            </thead>
+            <tbody>
+              <template v-for='(value, index) in history'>
+                <round-displayer v-bind:key='index' v-bind:round-number='index + 1' v-bind:round-result='value'></round-displayer>
+              </template>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </body>

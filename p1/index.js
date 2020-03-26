@@ -1,6 +1,8 @@
 Vue.component('choice-selector', {
   template: `
-    <button v-bind:id="choice" v-on:click="$emit('select-choice')">{{capitalizeStr(choice)}}</button>
+    <div class='button'>
+      <button v-bind:id="choice" v-on:click="$emit('select-choice')">{{capitalizeStr(choice)}}</button>
+    </div>
   `,
   props: {
     choice: String
@@ -14,19 +16,22 @@ Vue.component('choice-selector', {
 
 Vue.component('round-displayer', {
   template: `
-    <div>
-      Round {{roundNumber}}: {{ roundResult }}
-
-      <div v-if='roundResult > 0'>
-        Player won
-      </div>
-      <div v-else-if='roundResult < 0'>
-        Computer won
-      </div>
-      <div v-else>
-        Player and Computer tied
-      </div>
-    </div>
+    <tr>
+      <td>
+        {{roundNumber}}
+      </td>
+      <td>
+        <div v-if='roundResult > 0'>
+          Player
+        </div>
+        <div v-else-if='roundResult < 0'>
+          Computer
+        </div>
+        <div v-else>
+          Tie
+        </div>
+      </td>
+    </tr>
   `,
   props: {
     roundNumber: Number,

@@ -1,5 +1,21 @@
+.column {
+  float: left;
+  width: 30%;
+  padding: 10px;
+}
+
 .lost {
   color: red;
+}
+
+.button {
+  padding: 10px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 .won {
