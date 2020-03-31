@@ -1,6 +1,6 @@
 # Scramble game
 
-Code in production here: http://scramble.filmeyer.me/
+Code in production here: http://week8.filmeyer.me/
 
 How the game works:
 * The player is shown a scrambled word and a hint
