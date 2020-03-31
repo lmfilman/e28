@@ -1,0 +1,32 @@
+<html lang='en'>
+  <head>
+    <title>Word Scramble</title>
+    <meta charset='utf-8'>
+    <script src='js/master.js' defer></script>
+  </head>
+  <body>
+    <div id='app' v-cloak>
+      <h1>Word Scramble</h1>
+      <div v-if='!gameInitiated'>
+        <label>Enter your player name<input type='text' v-model='playerName'></label>
+        <button v-on:click='initGame'>Let's play!</button>
+      </div>
+      <div v-else>
+        <p>Game on, {{playerName}}!</p>
+
+        <p>Your mystery word is: {{mysteryWord}}</p>
+
+        <p>Hint: <i>{{hint}}</i></p>
+
+        <label>Your guess<input type='text' v-model='playerGuess'></label>
+        <button v-on:click='submitGuess'>Submit guess</button>
+        <br/>
+        <div v-if='guessIsSubmitted'>
+          <result-detail v-bind:player-won='playerWon' v-on:play-again='playAgain($event)'>
+            <template v-slot:outcome>{{outcomeText}}</template>
+          </result-detail>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
