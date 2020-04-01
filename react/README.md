@@ -107,6 +107,12 @@ Next, we learn how to handle a click event and store state on a component.  If t
 
 <img src="https://github.com/lmfilman/e28/raw/master/react/wiki/setting_state_and_event_handling.png" width="200">
 
+#### Developer Tools
+
+Similar to the Vue Devtools extension we downloaded to our browsers earlier in the semester, there exist React Devtools, which let us inspect our tree of Components and their state:
+
+<img src="https://github.com/lmfilman/e28/raw/master/react/wiki/react_dev_tools.png" width="600">
+
 ## Conclusions
 [TODO]
 
