@@ -84,6 +84,12 @@ class ShoppingList extends React.Component {
 ```
 
 #### Reviewing the Starter Code
+1. The starter code provides us with 3 components `Square`, `Board`, and `Game`
+2. `Square#render` returns a `<button>`
+3. `Board#render` returns a 3x3 of `<Square />` components
+4. `Game#render` returns a `<Board />` component and space for game metadata
+
+#### Passing Data through Props
 
 
 
