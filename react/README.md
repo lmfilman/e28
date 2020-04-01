@@ -6,7 +6,7 @@ The goal of this independent study is to build a simple React application and dr
 ## Approach
 The approach I've decided to take is to follow this [Tutorial: Intro to React](https://reactjs.org/tutorial/tutorial.html), which involves building a Tic-Tac-Toe game in React.  Through building this application, I anticipate I will encounter similar terminology and concepts to the ones we've learned in the e28 course.  I will make note of notable similarities and differences and write down my conclusions.  I will also supplement my learning by reading online blogs and discussions that compare the two frameworks.
 
-![Tic Tac Toe App Finished](https://github.com/lmfilman/e28/raw/master/react/wiki/tic_tac_toe_finished.png "Tic Tac Toe App Finished")
+<img src="https://github.com/lmfilman/e28/raw/master/react/wiki/tic_tac_toe_finished.png" width="500">
 
 ## Building Tic-Tac-Toe
 ### Step 1: Setup local development environment
@@ -25,7 +25,7 @@ npm start
 ```
 We can now visit http://localhost:3000/ and see the following in our browser:
 
-![Create React App Template](https://github.com/lmfilman/e28/raw/master/react/wiki/create_react_app_template.png "Create React App Template")
+<img src="https://github.com/lmfilman/e28/raw/master/react/wiki/create_react_app_template.png" width="500">
 
 4. Insert Tic Tac Toe template code
 
@@ -48,7 +48,7 @@ npm start
 
 We can now visit http://localhost:3000/ and see the following in our browser:
 
-![Tic Tac Toe App Template](https://github.com/lmfilman/e28/raw/master/react/wiki/tic_tac_toe_template.png "Tic Tac Toe App Template")
+<img src="https://github.com/lmfilman/e28/raw/master/react/wiki/tic_tac_toe_template.png" width="250">
 
 ## Conclusions
 [TODO]
