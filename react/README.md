@@ -10,6 +10,7 @@ The approach I've decided to take is to follow this [Tutorial: Intro to React](h
 
 ## Building Tic-Tac-Toe
 ### Step 1: Setup local development environment
+[Link to Tutorial](https://reactjs.org/tutorial/tutorial.html#setup-for-the-tutorial)
 
 1. In order to run the tutorial in a local development environment, we are first instructed to install a recent version of Node (>=8.10) and npm (>=5.6).  We have already done this in our e28 course.
 
@@ -50,6 +51,33 @@ We can now visit http://localhost:3000/ and see the following in our browser:
 
 <img src="https://github.com/lmfilman/e28/raw/master/react/wiki/tic_tac_toe_template.png" width="250">
 
+### Step 2: Read Overview
+
+[Link to Tutorial](https://reactjs.org/tutorial/tutorial.html#overview)
+
+1. In React you can define components, which inherit from `React.Component`
+2. Components have properties, `props`
+3. Components can define a `render` method which define the view, and return a "React element"
+4. React developers use "JSX" files which allow for the mixing of HTML & Javascript expressions
+
+```jsx
+class ShoppingList extends React.Component {
+  render() {
+    return (
+      <div className="shopping-list">
+        <h1>Shopping List for {this.props.name}</h1>
+        <ul>
+          <li>Instagram</li>
+          <li>WhatsApp</li>
+          <li>Oculus</li>
+        </ul>
+      </div>
+    );
+  }
+}
+
+// Example usage: <ShoppingList name="Mark" />
+```
 ## Conclusions
 [TODO]
 
