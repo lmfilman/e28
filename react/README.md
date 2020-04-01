@@ -27,24 +27,21 @@ We can now visit http://localhost:3000/ and see the following in our browser:
 
 ![Create React App Template](https://github.com/lmfilman/e28/raw/master/react/wiki/create_react_app_template.png "Create React App Template")
 
-4. Remove generic template code:
+4. Insert Tic Tac Toe template code
+
+Remove generic template code:
 ```
 cd my-app
 cd src
 rm -f *
 cd ..
 ```
-5. Insert Tic Tac Toe template code:
 
-Add `src/index.css`:
+And add the template Tic Tac Toe code:
+* [src/index.css](https://github.com/lmfilman/e28/commit/3c1ee987a6a58e5b45bc5fb7c783e466c3b9365d#diff-6559d78cd553e3c5e67ff94bfe5937cd)
+* [src/index.js](https://github.com/lmfilman/e28/commit/3c1ee987a6a58e5b45bc5fb7c783e466c3b9365d#diff-2d21295050da745874acf075fdd6490f)
 
-https://github.com/lmfilman/e28/blob/3c1ee987a6a58e5b45bc5fb7c783e466c3b9365d/react/my-app/src/index.css#L1-L50
-
-Add `src/index.js`:
-
-https://github.com/lmfilman/e28/blob/3c1ee987a6a58e5b45bc5fb7c783e466c3b9365d/react/my-app/src/index.js#L1-L67
-
-6. Start the Tic Tac Toe application:
+5. Start the Tic Tac Toe application:
 ```
 npm start
 ```
