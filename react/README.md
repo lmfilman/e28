@@ -51,7 +51,7 @@ We can now visit http://localhost:3000/ and see the following in our browser:
 
 <img src="https://github.com/lmfilman/e28/raw/master/react/wiki/tic_tac_toe_template.png" width="250">
 
-### Step 2: Read Overview
+### Step 2: Overview
 
 [Link to Tutorial](https://reactjs.org/tutorial/tutorial.html#overview)
 
@@ -101,7 +101,7 @@ Through the tutorial, we learn to pass props from a parent component to a child 
 
 #### Making an Interactive Component
 
-Next, we learn how to handling a click event and store state on a component.  If the `Square` has been clicked, we store the value "X" on the component.
+Next, we learn how to handle a click event and store state on a component.  If the `Square` has been clicked, we store the value "X" on the component.
 
 [See changes to index.jsx](https://github.com/lmfilman/e28/commit/cbcec857822962c3cc66839ce74d17c0689400e7)
 
