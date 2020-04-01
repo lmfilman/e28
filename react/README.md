@@ -55,6 +55,10 @@ We can now visit http://localhost:3000/ and see the following in our browser:
 
 [Link to Tutorial](https://reactjs.org/tutorial/tutorial.html#overview)
 
+#### What is React?
+
+> React is a declarative, efficient, and flexible JavaScript library for building user interfaces. It lets you compose complex UIs from small and isolated pieces of code called “components”.
+
 1. In React you can define components, which inherit from `React.Component`
 2. Components have properties, `props`
 3. Components can define a `render` method which define the view, and return a "React element"
@@ -78,6 +82,11 @@ class ShoppingList extends React.Component {
 
 // Example usage: <ShoppingList name="Mark" />
 ```
+
+#### Reviewing the Starter Code
+
+
+
 ## Conclusions
 [TODO]
 
