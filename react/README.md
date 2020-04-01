@@ -92,12 +92,20 @@ class ShoppingList extends React.Component {
 **Note:** At this step, the tutorial did not instruct me to rename `index.js` to `index.jsx` but I did so anyway so that my text editor (Sublime 3) could render the file in a way that was more legible to me.
 
 #### Passing Data through Props
-The tutorial demonstrates passing props by passing the square value (1-9) from the `Board` component to the `Square` component:
+
+Through the tutorial, we learn to pass props from a parent component to a child component by passing value (1-9) from `Board` to `Square`:
 
 [See changes to index.jsx](https://github.com/lmfilman/e28/commit/f3376e3b8367d8c7215ce0df3e10c2a45302ab61)
 
-<img src="https://github.com/lmfilman/e28/raw/master/react/wiki/passing_props.png" width="250">
+<img src="https://github.com/lmfilman/e28/raw/master/react/wiki/passing_props.png" width="200">
 
+#### Making an Interactive Component
+
+Next, we learn how to handling a click event and store state on a component.  If the `Square` has been clicked, we store the value "X" on the component.
+
+[See changes to index.jsx](https://github.com/lmfilman/e28/commit/cbcec857822962c3cc66839ce74d17c0689400e7)
+
+<img src="https://github.com/lmfilman/e28/raw/master/react/wiki/setting_state_and_event_handling.png" width="200">
 
 ## Conclusions
 [TODO]
