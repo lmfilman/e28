@@ -1,7 +1,16 @@
 <template>
   <div id="app">
     <img alt="Logo" src="./assets/images/logo.png">
-    <p>This app is for determining what to make for dinner given some recipes we like and some recipes we're interested in trying out.</p>
+
+    <nav>
+      <ul>
+        <li v-for='link in links' :key='link'>
+          <router-link :to='{ name: link }' exact>{{ link }}</router-link>
+        </li>
+      </ul>
+    </nav>
+
+    <router-view></router-view>
   </div>
 </template>
 
@@ -9,7 +18,11 @@
 
 export default {
   name: 'App',
-  components: {
+  components: {},
+  data: function() {
+    return {
+      links: ['home', 'recipes', 'categories']
+    }
   }
 }
 </script>
