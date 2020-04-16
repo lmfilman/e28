@@ -6,7 +6,7 @@
 
 <script>
 import ShowRecipe from '@/components/ShowRecipe.vue'
-import { recipes } from '@/recipes.js'
+const axios = require('axios');
 
 export default {
   name: '',
@@ -15,8 +15,14 @@ export default {
   },
   data: function() {
     return {
-      recipes: recipes
+      recipes: []
     };
+  },
+  mounted: function() {
+    axios.get('http://localhost:8080/recipes.json')
+      .then(response => {
+        this.recipes = response.data['recipes'];
+      });
   }
 };
 </script>

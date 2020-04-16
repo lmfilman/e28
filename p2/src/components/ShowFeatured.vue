@@ -8,14 +8,14 @@
 </template>
 
 <script>
-import { recipes } from '@/recipes.js'
+const axios = require('axios');
 
 export default {
   name: '',
   props: ['category'],
   data: function() {
     return {
-      recipes: recipes
+      recipes: []
     };
   },
   computed: {
@@ -25,6 +25,12 @@ export default {
       }
       return this.recipes.filter(isMatch, this.category);
     }
+  },
+  mounted: function() {
+    axios.get('http://localhost:8080/recipes.json')
+      .then(response => {
+        this.recipes = response.data['recipes'];
+      });
   }
 };
 </script>

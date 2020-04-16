@@ -8,13 +8,13 @@
 </template>
 
 <script>
-import { recipes } from '@/recipes.js'
+const axios = require('axios');
 
 export default {
   name: '',
   data: function() {
     return {
-      recipes: recipes
+      recipes: []
     };
   },
   computed: {
@@ -25,6 +25,12 @@ export default {
       // Return unique, sorted categories
       return [...new Set(mergedCategories)].sort();
     }
+  },
+  mounted: function() {
+    axios.get('http://localhost:8080/recipes.json')
+      .then(response => {
+        this.recipes = response.data['recipes'];
+      });
   }
 };
 </script>

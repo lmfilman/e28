@@ -1,0 +1,55 @@
+{
+  "recipes": [
+    {
+      "authors": [],
+      "categories": ["Soup", "Spicy"],
+      "cooking_method": "Stovetop",
+      "cuisines": ["Korean", "Asian"],
+      "healthiness": "Medium",
+      "id": 1,
+      "ingredients": ["pork", "garlic", "ginger", "soy sauce", "sesame oil", "fish sauce",
+      "butter", "onion", "kimchi", "gochujang", "gochugaru", "tofu", "scallion"],
+      "liked": true,
+      "name": "Kimchi Jjigae",
+      "number_of_times_cooked": 2,
+      "reference": "https://cooking.nytimes.com/recipes/1017145-kimchi-soup",
+      "reference_type": "web",
+      "source": "New York Times",
+      "time": 40
+    },
+    {
+      "authors": ["Ottolenghi"],
+      "categories": ["Vegetable"],
+      "cooking_method": "Oven",
+      "cuisines": ["Mediterranean"],
+      "healthiness": "High",
+      "id": 2,
+      "ingredients": ["eggplant", "greek yogurt", "curry powder", "turmeric", "lime", "onion",
+      "almond", "cumin seed", "coriander seed", "pomegranate"],
+      "liked": true,
+      "name": "Roasted Eggplant with Curried Yogurt",
+      "number_of_times_cooked": 2,
+      "reference": "pg. 66",
+      "reference_type": "book",
+      "source": "Ottolenghi Simple",
+      "time": 60
+    },
+    {
+      "authors": ["Kenji"],
+      "categories": ["Soup"],
+      "cooking_method": "Pressure Cooker",
+      "cuisines": ["American"],
+      "healthiness": "High",
+      "id": 9,
+      "ingredients": ["butter", "leek", "garlic", "corn", "bay leaf", "tarragon", "chicken stock",
+      "chive"],
+      "liked": true,
+      "name": "Pressure Cooker Corn Soup",
+      "number_of_times_cooked": 1,
+      "reference": "https://www.seriouseats.com/recipes/2015/08/pressure-cooker-corn-soup-recipe.html",
+      "reference_type": "web",
+      "source": "Serious Eats",
+      "time": 45
+    }
+  ]
+}
