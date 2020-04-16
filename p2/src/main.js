@@ -1,10 +1,10 @@
 import Vue from 'vue'
-import App from './App.vue'
+import App from '@/App.vue'
 import VueRouter from 'vue-router'
-import RecipesPage from './components/pages/RecipesPage.vue'
-import RecipePage from './components/pages/RecipePage.vue'
-import HomePage from './components/pages/HomePage.vue'
-import CategoriesPage from './components/pages/CategoriesPage.vue'
+import RecipesPage from '@/components/pages/RecipesPage.vue'
+import RecipePage from '@/components/pages/RecipePage.vue'
+import HomePage from '@/components/pages/HomePage.vue'
+import CategoriesPage from '@/components/pages/CategoriesPage.vue'
 
 Vue.use(VueRouter);
 

@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import ShowFeatured from './../ShowFeatured.vue'
+import ShowFeatured from '@/components/ShowFeatured.vue'
 
 export default {
   name: '',

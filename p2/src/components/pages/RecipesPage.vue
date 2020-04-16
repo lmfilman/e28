@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import ShowRecipe from './../ShowRecipe.vue'
-import { recipes } from './../../recipes.js'
+import ShowRecipe from '@/components/ShowRecipe.vue'
+import { recipes } from '@/recipes.js'
 
 export default {
   name: '',

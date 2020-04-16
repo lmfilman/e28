@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img alt="Logo" src="./assets/images/logo.png">
+    <img alt="Logo" src="@/assets/images/logo.png">
 
     <nav>
       <ul>
@@ -28,5 +28,5 @@ export default {
 </script>
 
 <style lang='scss'>
-@import './assets/scss/p2.scss';
+@import '@/assets/scss/p2.scss';
 </style>

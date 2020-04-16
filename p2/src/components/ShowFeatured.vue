@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { recipes } from './../recipes.js'
+import { recipes } from '@/recipes.js'
 
 export default {
   name: '',
