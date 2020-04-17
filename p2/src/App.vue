@@ -22,6 +22,8 @@ export default {
     return {
       links: ['home', 'recipes', 'categories']
     }
+  },
+  mounted: function() {
   }
 }
 </script>
