@@ -8,7 +8,7 @@
 </template>
 
 <script>
-const axios = require('axios');
+import * as app from '@/common/app.js';
 
 export default {
   name: '',
@@ -27,10 +27,10 @@ export default {
     }
   },
   mounted: function() {
-    axios.get('http://localhost:8080/recipes.json')
-      .then(response => {
-        this.recipes = response.data['recipes'];
-      });
+    app.api.all('recipes').then(response => {
+      let keys = Object.keys(response);
+      this.recipes = keys.map(key => response[key]);
+    });
   }
 };
 </script>

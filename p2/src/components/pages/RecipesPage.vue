@@ -20,7 +20,8 @@ export default {
   },
   mounted: function() {
     app.api.all('recipes').then(response => {
-      this.recipes = response;
+      let keys = Object.keys(response);
+      this.recipes = keys.map(key => response[key]);
     });
   }
 };
