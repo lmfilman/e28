@@ -27,7 +27,7 @@
     <input type='text' v-model='recipe.ingredients' id='ingredients' />
 
     <label for='healthiness'>Healthiness (Low, Medium, High)</label>
-    <input type='text' v-model='recipe.healthiness' id='healthiness' />
+    <multiselect v-model='recipe.healthiness' :options="healthiness_options" id='healthiness'></multiselect>
 
     <label for='categories'>Categories (comma separated)</label>
     <input type='text' v-model='recipe.categories' id='categories' />
@@ -42,12 +42,15 @@
 
 <script>
 import * as app from '@/common/app.js';
+import Multiselect from 'vue-multiselect';
 
 export default {
   name: '',
+  components: { Multiselect },
   data: function() {
     return {
       added: false,
+      healthiness_options: ['Low', 'Medium', 'High'],
       recipe: {
         name: '',
         id: '',
@@ -85,6 +88,8 @@ export default {
   }
 };
 </script>
+
+<style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 
 <style scoped>
 input {
