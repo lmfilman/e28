@@ -50,7 +50,7 @@ export default {
   data: function() {
     return {
       added: false,
-      category_options: ['Asian', 'Soup'],
+      category_options: [],
       healthiness_options: ['Low', 'Medium', 'High'],
       recipe: {
         name: '',
@@ -90,6 +90,15 @@ export default {
       this.recipe.categories.push(newCategory);
       this.category_options.push(newCategory);
     }
+  },
+  mounted: function() {
+    app.api.all('recipes').then(response => {
+      let keys = Object.keys(response);
+      let recipes = keys.map(key => response[key]);
+      let categories = recipes.map(recipe => recipe.categories);
+      let mergedCategories = [].concat.apply([], categories);
+      this.category_options = [...new Set(mergedCategories)].sort();
+    });
   }
 };
 </script>
