@@ -26,11 +26,11 @@
     <label for='ingredients'>Ingredients (comma separated)</label>
     <input type='text' v-model='recipe.ingredients' id='ingredients' />
 
-    <label for='healthiness'>Healthiness (Low, Medium, High)</label>
+    <label for='healthiness'>Healthiness</label>
     <multiselect v-model='recipe.healthiness' :options="healthiness_options" id='healthiness'></multiselect>
 
-    <label for='categories'>Categories (comma separated)</label>
-    <input type='text' v-model='recipe.categories' id='categories' />
+    <label for='categories'>Categories</label>
+    <multiselect v-model='recipe.categories' :options="category_options" :multiple="true" :taggable="true" id='categories' @tag="addTag"></multiselect>
 
     <input type='submit' value='Add' @click.prevent='addRecipe' />
 
@@ -50,6 +50,7 @@ export default {
   data: function() {
     return {
       added: false,
+      category_options: ['Asian', 'Soup'],
       healthiness_options: ['Low', 'Medium', 'High'],
       recipe: {
         name: '',
@@ -60,8 +61,8 @@ export default {
         number_of_times_cooked: 0,
         liked: false,
         ingredients: '',
-        healthiness: '',
-        categories: ''
+        healthiness: [],
+        categories: []
       }
     };
   },
@@ -80,10 +81,18 @@ export default {
             number_of_times_cooked: 0,
             liked: false,
             ingredients: '',
-            healthiness: '',
-            categories: ''
+            healthiness: [],
+            categories: []
           }
       });
+    },
+    addTag (newTag) {
+      const tag = {
+        name: newTag,
+        code: newTag.substring(0, 2) + Math.floor((Math.random() * 10000000))
+      };
+      this.recipe.categories.push(tag);
+      this.category_options.push(tag);
     }
   }
 };
