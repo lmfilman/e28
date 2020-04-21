@@ -30,7 +30,7 @@
     <multiselect v-model='recipe.healthiness' :options="healthiness_options" id='healthiness'></multiselect>
 
     <label for='categories'>Categories</label>
-    <multiselect v-model='recipe.categories' :options="category_options" :multiple="true" :taggable="true" id='categories' @tag="addTag"></multiselect>
+    <multiselect v-model='recipe.categories' :options="category_options" :multiple="true" :taggable="true" id='categories' @tag="addCategory"></multiselect>
 
     <input type='submit' value='Add' @click.prevent='addRecipe' />
 
@@ -86,13 +86,9 @@ export default {
           }
       });
     },
-    addTag (newTag) {
-      const tag = {
-        name: newTag,
-        code: newTag.substring(0, 2) + Math.floor((Math.random() * 10000000))
-      };
-      this.recipe.categories.push(tag);
-      this.category_options.push(tag);
+    addCategory: function(newCategory) {
+      this.recipe.categories.push(newCategory);
+      this.category_options.push(newCategory);
     }
   }
 };
