@@ -48,7 +48,7 @@ export default {
       categoryOptions: [],
       healthinessOptions: ['Low', 'Medium', 'High'],
       ingredientOptions: [],
-      referenceTypeOptions: ['Web', 'Book', 'Idea'],
+      referenceTypeOptions: ['Web', 'Book', 'Idea', 'Custom'],
       recipe: {
         name: '',
         id: '',
