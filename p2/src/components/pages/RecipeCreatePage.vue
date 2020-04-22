@@ -44,6 +44,8 @@
 <script>
 import * as app from '@/common/app.js';
 import Multiselect from 'vue-multiselect';
+import { uuid } from 'vue-uuid';
+
 
 export default {
   name: '',
@@ -76,7 +78,7 @@ export default {
           setTimeout(() => (this.added = false), 3000);
           this.recipe = {
             name: '',
-            id: '',
+            id: uuid.v1(),
             reference_type: '',
             source: '',
             reference: '',
@@ -101,6 +103,8 @@ export default {
       let mergedCategories = [].concat.apply([], categories);
       this.category_options = [...new Set(mergedCategories)].sort();
     });
+
+    this.recipe.id = uuid.v1();
   }
 };
 </script>
