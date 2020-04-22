@@ -5,10 +5,6 @@
     <label for='name'>Name</label>
     <input type='text' v-model='recipe.name' id='name' />
 
-    <label for='id'>URL Identifier</label>
-    <input type='text' v-model='recipe.id' id='id' />
-
-
     <label for='reference_type'>Reference Type</label>
     <multiselect v-model='recipe.reference_type' :options="reference_type_options" id='reference_type'></multiselect>
 
@@ -45,7 +41,6 @@
 import * as app from '@/common/app.js';
 import Multiselect from 'vue-multiselect';
 import { uuid } from 'vue-uuid';
-
 
 export default {
   name: '',
