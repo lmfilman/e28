@@ -8,8 +8,9 @@
     <label for='id'>URL Identifier</label>
     <input type='text' v-model='recipe.id' id='id' />
 
-    <label for='reference_type'>Reference Type (web, book, idea)</label>
-    <input type='text' v-model='recipe.reference_type' id='reference_type' />
+
+    <label for='reference_type'>Reference Type</label>
+    <multiselect v-model='recipe.reference_type' :options="reference_type_options" id='reference_type'></multiselect>
 
     <label for='source'>Source (website title, book title)</label>
     <input type='text' v-model='recipe.source' id='source' />
@@ -52,6 +53,7 @@ export default {
       added: false,
       category_options: [],
       healthiness_options: ['Low', 'Medium', 'High'],
+      reference_type_options: ['Web', 'Book', 'Idea'],
       recipe: {
         name: '',
         id: '',
@@ -61,7 +63,7 @@ export default {
         number_of_times_cooked: 0,
         liked: false,
         ingredients: '',
-        healthiness: [],
+        healthiness: '',
         categories: []
       }
     };
