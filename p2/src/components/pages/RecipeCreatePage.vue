@@ -20,8 +20,8 @@
     <label for='liked'>Liked?</label>
     <input type='checkbox' v-model='recipe.liked' id='liked' />
 
-    <label for='ingredients'>Ingredients (comma separated)</label>
-    <input type='text' v-model='recipe.ingredients' id='ingredients' />
+    <label for='ingredients'>Ingredients</label>
+    <multiselect v-model='recipe.ingredients' :options="ingredient_options" :multiple="true" :taggable="true" id='ingredients' @tag="addIngredient"></multiselect>
 
     <label for='healthiness'>Healthiness</label>
     <multiselect v-model='recipe.healthiness' :options="healthiness_options" id='healthiness'></multiselect>
@@ -50,6 +50,7 @@ export default {
       added: false,
       category_options: [],
       healthiness_options: ['Low', 'Medium', 'High'],
+      ingredient_options: [],
       reference_type_options: ['Web', 'Book', 'Idea'],
       recipe: {
         name: '',
@@ -59,7 +60,7 @@ export default {
         reference: '',
         number_of_times_cooked: 0,
         liked: false,
-        ingredients: '',
+        ingredients: [],
         healthiness: '',
         categories: []
       }
@@ -79,7 +80,7 @@ export default {
             reference: '',
             number_of_times_cooked: 0,
             liked: false,
-            ingredients: '',
+            ingredients: [],
             healthiness: [],
             categories: []
           }
@@ -88,15 +89,24 @@ export default {
     addCategory: function(newCategory) {
       this.recipe.categories.push(newCategory);
       this.category_options.push(newCategory);
+    },
+    addIngredient: function(newIngredient) {
+      this.recipe.ingredients.push(newIngredient);
+      this.ingredient_options.push(newIngredient);
     }
   },
   mounted: function() {
     app.api.all('recipes').then(response => {
       let keys = Object.keys(response);
       let recipes = keys.map(key => response[key]);
+
       let categories = recipes.map(recipe => recipe.categories);
       let mergedCategories = [].concat.apply([], categories);
       this.category_options = [...new Set(mergedCategories)].sort();
+
+      let ingredients = recipes.map(recipe => recipe.ingredients);
+      let mergedIngredients = [].concat.apply([], ingredients);
+      this.ingredient_options = [...new Set(mergedIngredients)].sort();
     });
 
     this.recipe.id = uuid.v1();
