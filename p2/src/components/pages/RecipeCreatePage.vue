@@ -8,7 +8,7 @@
     <label for='reference-type'>Reference Type</label>
     <multiselect v-model='recipe.referenceType' :options="referenceTypeOptions" id='reference-type'></multiselect>
 
-    <label for='reference'>Reference (url, book & page #)</label>
+    <label for='reference'>Reference (ex. url, book title & page #)</label>
     <input type='text' v-model='recipe.reference' id='reference' />
 
     <label for='number-of-times-cooked'>Number of times cooked</label>
