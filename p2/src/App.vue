@@ -20,7 +20,7 @@ export default {
   components: {},
   data: function() {
     return {
-      links: ['home', 'recipes', 'categories', 'add a recipe']
+      links: ['home', 'recipes', 'add a recipe']
     }
   },
   mounted: function() {
