@@ -12,7 +12,7 @@
     <input type='text' v-model='recipe.reference' id='reference' />
 
     <label for='number-of-times-cooked'>Number of times cooked</label>
-    <input type='text' v-model='recipe.numberOfTimesCooked' id='number-of-times-cooked' />
+    <input type='number' v-model.number='recipe.numberOfTimesCooked' id='number-of-times-cooked' />
 
     <label for='liked'>Liked?</label>
     <input type='checkbox' v-model='recipe.liked' id='liked' />
