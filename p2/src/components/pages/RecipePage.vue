@@ -3,7 +3,7 @@
     <div v-if='recipe'>
       <div class="row">
         <h2>{{recipe.name}}</h2>
-        <div class="column familiarity">
+        <div class="column badges">
           <div v-if='recipe.liked'>
             <img alt="Liked" src="@/assets/images/star.png" style='width:125px'>
           </div>
@@ -27,8 +27,16 @@
           </p>
         </div>
         <div class="column">
-          <p>{{ recipe.referenceType }}</p>
-          <p>{{ recipe.reference }}</p>
+          <a v-if='recipe.referenceType == "Web"' :href='recipe.reference'>
+            <img :src='"@/assets/images/web.png"' style='width:100px'>
+          </a>
+          <div v-else-if='recipe.referenceType == "Book"'>
+            <img :src='"@/assets/images/book.png"' style='width:100px'>
+            <p>{{recipe.reference}}</p>
+          </div>
+          <div v-else>
+            <img :src='"@/assets/images/" + recipe.referenceType.toLowerCase() + ".png"' style='width:100px'>
+          </div>
         </div>
       </div>
     </div>
@@ -61,16 +69,16 @@ export default {
 </script>
 
 <style scoped>
-.familiarity {
+.badges {
   border: 1px solid black;
   width: 20%;
   margin-top: 30px;
-  margin-right: 30px;
 }
 
 .details {
-  width: 40%;
+  width: 50%;
 }
+
 .row {
   margin-top: 50px;
 }
