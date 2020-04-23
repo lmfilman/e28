@@ -1,9 +1,14 @@
 <template>
   <div id='recipe-page'>
-    <h1>Recipe {{ id }}</h1>
-
     <div v-if='recipe'>
       <p>{{ recipe.name }}</p>
+      <p>{{ recipe.referenceType }}</p>
+      <p>{{ recipe.reference }}</p>
+      <p>{{ recipe.numberOfTimesCooked }}</p>
+      <p>{{ recipe.liked }}</p>
+      <p>{{ recipe.ingredients }}</p>
+      <p>{{ recipe.healthiness }}</p>
+      <p>{{ recipe.categories }}</p>
     </div>
   </div>
 </template>
