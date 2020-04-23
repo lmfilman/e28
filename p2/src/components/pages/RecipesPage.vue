@@ -28,6 +28,25 @@ export default {
       let keys = Object.keys(response);
       this.recipes = keys.map(key => response[key]);
     });
+  },
+  computed: {
+    groupedRecipes: function() {
+      let output = [];
+      let i;
+
+      for (i = 0; i < this.recipes.length; i++) {
+        let newRecipe = this.recipes[i];
+
+        if (i % 2 == 0) {
+          output.push([newRecipe]);
+        } else {
+          let lastRecipe = output.pop().pop();
+          output.push([lastRecipe, newRecipe]);
+        }
+      }
+
+      return output;
+    }
   }
 };
 </script>
