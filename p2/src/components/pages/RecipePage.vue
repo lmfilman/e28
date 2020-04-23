@@ -2,21 +2,23 @@
   <div id='recipe-page'>
     <div v-if='recipe'>
       <div class="row">
+        <h2>{{recipe.name}}</h2>
         <div class="column familiarity">
           <div v-if='recipe.liked'>
             <img alt="Liked" src="@/assets/images/star.png" style='width:125px'>
           </div>
+          <div v-if='recipe.healthiness == "High"'>
+            <img alt="Healthy" src="@/assets/images/healthy.png" style='width:100px'>
+          </div>
           <p>{{numberOfTimesCookedText}}</p>
         </div>
         <div class="column details">
-          <h2>{{recipe.name}}</h2>
           <p>
             <u>Ingredients:</u>
             <ul>
               <li v-for='ingredient in recipe.ingredients' :key='ingredient'>{{ingredient}}</li>
             </ul>
           </p>
-          <p><u>Healthiness:</u> {{ recipe.healthiness }}</p>
           <p>
             <u>Categories:</u>
             <ul>
