@@ -105,6 +105,19 @@ nav ul {
         }
     }
 }
+
+.column {
+  float: left;
+  width: 30%;
+  padding: 10px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 /*----------------------------------------------------
 PAGE SPECIFIC
 -----------------------------------------------------*/
