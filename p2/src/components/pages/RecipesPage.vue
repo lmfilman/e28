@@ -1,10 +1,15 @@
 <template>
   <div id='recipes'>
-    <router-link v-for='recipe in recipes' :key='recipe.id' :to='{name: "recipe", params: {id: recipe.id}}'>
-      <div class='recipe'>
-        <div class='recipe-name'>{{ recipe.name }}</div>
+    <div class='row recipe' v-for='recipe in recipes' :key='recipe.id'>
+      <div class='column recipe-name'>
+        <div>{{ recipe.name }}</div>
       </div>
-    </router-link>
+      <div class='column recipe-link'>
+        <router-link :to='{name: "recipe", params: {id: recipe.id}}'>
+          <img :src='"@/assets/images/web_no_text.png"' style='width:25px'>
+        </router-link>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -28,4 +33,24 @@ export default {
 </script>
 
 <style scoped>
+a {
+  text-decoration: none;
+}
+
+.recipe {
+  width: 75%;
+  margin: auto;
+  margin-bottom: 10px;
+  border: 1px solid black;
+}
+
+.recipe-name {
+  font-size: 1.5rem;
+  width: 90%;
+  margin-top: 5px;
+}
+
+.recipe-link {
+  width: 10%;
+}
 </style>
