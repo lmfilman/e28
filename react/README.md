@@ -131,6 +131,13 @@ Components which only require a `render` method can be rewritten as functions to
 
 [See changes to index.jsx](https://github.com/lmfilman/e28/commit/09a3cd8b4789c308f09a40e4ea3057eae72ab405)
 
+#### Taking Turns
+
+In the next set of changes, we alternate whose turn it is (X or O) by storing `xIsNext` state on the `Board`.  When we `handleClick`, we use `xIsNext` to determine the value of the square clicked, and then we toggle the value.
+
+[See changes to index.jsx](https://github.com/lmfilman/e28/commit/dcf38edb4fe1727859e6cadcbdf9a7e7cf2be9f3)
+
+
 ## Conclusions
 [TODO]
 
