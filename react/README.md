@@ -137,6 +137,11 @@ In the next set of changes, we alternate whose turn it is (X or O) by storing `x
 
 [See changes to index.jsx](https://github.com/lmfilman/e28/commit/dcf38edb4fe1727859e6cadcbdf9a7e7cf2be9f3)
 
+#### Declaring a Winner
+
+We now want to add the ability to determine whether a player has won.  We use a helper function `calculateWinner` that iterates through each of the rows, columns, & diagonals, and checks against the board to see if any of these lines have all Xs or all Os, and returns the winner.  We use this function in `Board#render` to calculate the winner if there is one, and set the game status.  We also use this function in `Board#handleClick` to determine whether we should continue to handle clicks or freeze the board.
+
+[See changes to index.jsx](https://github.com/lmfilman/e28/commit/caba87e044d465e381ee091b3dc822af0a3aea95)
 
 ## Conclusions
 [TODO]
