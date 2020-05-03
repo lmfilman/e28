@@ -125,6 +125,12 @@ In the next set of changes, we construct the state in the `Board` constructor in
 
 [See changes to index.jsx](https://github.com/lmfilman/e28/commit/1cdc555c8fc54e5eeec301cf47dc18e04c00b310)
 
+#### Function Components
+
+Components which only require a `render` method can be rewritten as functions to simplify the Component.  We can do this with the `Square` component.
+
+[See changes to index.jsx](https://github.com/lmfilman/e28/commit/09a3cd8b4789c308f09a40e4ea3057eae72ab405)
+
 ## Conclusions
 [TODO]
 
