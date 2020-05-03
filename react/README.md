@@ -113,6 +113,18 @@ Similar to the Vue Devtools extension we downloaded to our browsers earlier in t
 
 <img src="https://github.com/lmfilman/e28/raw/master/react/wiki/react_dev_tools.png" width="600">
 
+### Step 3: Completing the Game
+
+[Link to Tutorial](https://reactjs.org/tutorial/tutorial.html#completing-the-game)
+
+#### Lifting State Up
+
+We currently have the `Square` component managing state (it's value of null, X, or O).  We want to lift the state up from the Child `Square` component to the Parent `Board` component so it's easier to manage overall game state and determine whether someone has won.
+
+In the next set of changes, we construct the state in the `Board` constructor in an Array and pass the values down to the Child `Square`s.  Additionally, we pass a method `onClick` from the `Board` to the `Square` components that the `Square` component can call to notify the Board when a click event has occurred.  This is similar to how we emit events in Vue.
+
+[See changes to index.jsx](https://github.com/lmfilman/e28/commit/1cdc555c8fc54e5eeec301cf47dc18e04c00b310)
+
 ## Conclusions
 [TODO]
 
