@@ -153,7 +153,7 @@ In the final portion of the tutorial, we want to be able to store a history of t
 
 Since the `Game` component will require access to `history` to allow for jumping back in time, it makes sense to "Lift state up" again.  In the next set of changes we lift state from `Board` to `Game`, and move click handling and winner calculation to `Game`.  `Board` is now just responsible for rendering 9 `Square`s.
 
-<img src="https://github.com/lmfilman/e28/raw/master/react/wiki/storing_history_of_moves.png" width="200">
+<img src="https://github.com/lmfilman/e28/raw/master/react/wiki/storing_history_of_moves.png" width="600">
 
 [See changes to index.jsx](https://github.com/lmfilman/e28/commit/8e46eca26657b7579de8246112b5284dfb78f7f2)
 
