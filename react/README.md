@@ -143,6 +143,20 @@ We now want to add the ability to determine whether a player has won.  We use a 
 
 [See changes to index.jsx](https://github.com/lmfilman/e28/commit/caba87e044d465e381ee091b3dc822af0a3aea95)
 
+### Step 4: Adding Time Travel
+
+[Link to Tutorial](https://reactjs.org/tutorial/tutorial.html#adding-time-travel)
+
+#### Storing a History of Moves
+
+In the final portion of the tutorial, we want to be able to store a history of the board and allow the player to jump to past points in time.  We achieve this by keeping an array of `history`, and adding a representation of the board (`squares`) to `history` each time the board changes.
+
+Since the `Game` component will require access to `history` to allow for jumping back in time, it makes sense to "Lift state up" again.  In the next set of changes we lift state from `Board` to `Game`, and move click handling and winner calculation to `Game`.  `Board` is now just responsible for rendering 9 `Square`s.
+
+<img src="https://github.com/lmfilman/e28/raw/master/react/wiki/storing_history_of_moves.png" width="200">
+
+[See changes to index.jsx](https://github.com/lmfilman/e28/commit/8e46eca26657b7579de8246112b5284dfb78f7f2)
+
 ## Conclusions
 [TODO]
 
