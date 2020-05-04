@@ -157,9 +157,17 @@ When a user clicks one of these buttons (ex. "Go to move #1"), we set the `stepN
 
 [See changes to index.jsx](https://github.com/lmfilman/e28/commit/3b61a50ee1f7b06939592fa7954cb7c7d01d9f80)
 
-## Conclusions
-[TODO]
+## Additional Readings
+* ["I created the exact same app in React and Vue. Here are the differences."](https://medium.com/javascript-in-plain-english/i-created-the-exact-same-app-in-react-and-vue-here-are-the-differences-e9a1ae8077fd) - Blog post on Medium by Sunil Sandhu
+
+## Conclusions from Tutorial & Readings
+* Both Vue & React have command line tools to bootstrap the creation of a new app (create-react-app vs. vue-cli)
+* Vue's `.vue` single file components incorporate HTML, JS, and CSS, whereas React's `.jsx` files only incorporate HTML & JS.
+* Vue components store data in `data`, and React components store data in `state`
+* In Vue, we can mutate data directly (`this.foo = 'bar'`).  In React, we cannot alter the data directly, and must call `setState`, like `this.setState({ foo: 'bar' })`.
+
 
 ## Sources
 * [Reactjs.org - Tutorial: Intro to React](https://reactjs.org/tutorial/tutorial.html)
 * [Github - Create React App](https://github.com/facebook/create-react-app)
+* [Medium - Blog Post - "I created the exact same app in React and Vue. Here are the differences."](https://medium.com/javascript-in-plain-english/i-created-the-exact-same-app-in-react-and-vue-here-are-the-differences-e9a1ae8077fd)
