@@ -89,8 +89,6 @@ class ShoppingList extends React.Component {
 3. `Board#render` returns a 3x3 of `<Square />` components
 4. `Game#render` returns a `<Board />` component and space for game metadata
 
-**Note:** At this step, the tutorial did not instruct me to rename `index.js` to `index.jsx` but I did so anyway so that my text editor (Sublime 3) could render the file in a way that was more legible to me.
-
 #### Passing Data through Props
 
 Through the tutorial, we learn to pass props from a parent component to a child component by passing value (1-9) from `Board` to `Square`:
@@ -119,17 +117,11 @@ Similar to the Vue Devtools extension we downloaded to our browsers earlier in t
 
 #### Lifting State Up
 
-We currently have the `Square` component managing state (it's value of null, X, or O).  We want to lift the state up from the Child `Square` component to the Parent `Board` component so it's easier to manage overall game state and determine whether someone has won.
+We currently have the `Square` component managing state (value: [X, O, null]).  We want to lift the state up from the Child `Square` component to the Parent `Board` component so it's easier to manage overall game state and determine whether someone has won.
 
 In the next set of changes, we construct the state in the `Board` constructor in an Array and pass the values down to the Child `Square`s.  Additionally, we pass a method `onClick` from the `Board` to the `Square` components that the `Square` component can call to notify the Board when a click event has occurred.  This is similar to how we emit events in Vue.
 
 [See changes to index.jsx](https://github.com/lmfilman/e28/commit/1cdc555c8fc54e5eeec301cf47dc18e04c00b310)
-
-#### Function Components
-
-Components which only require a `render` method can be rewritten as functions to simplify the Component.  We can do this with the `Square` component.
-
-[See changes to index.jsx](https://github.com/lmfilman/e28/commit/09a3cd8b4789c308f09a40e4ea3057eae72ab405)
 
 #### Taking Turns
 
@@ -149,7 +141,7 @@ We now want to add the ability to determine whether a player has won.  We use a 
 
 #### Storing a History of Moves
 
-In the final portion of the tutorial, we want to be able to store a history of the board and allow the player to jump to past points in time.  We achieve this by keeping an array of `history`, and adding a representation of the board (`squares`) to `history` each time the board changes.
+We want to be able to store a history of the board and allow the player to jump to past points in time.  We achieve this by keeping an array of `history`, and adding a representation of the board (`squares`) to `history` each time the board changes.
 
 Since the `Game` component will require access to `history` to allow for jumping back in time, it makes sense to "Lift state up" again.  In the next set of changes we lift state from `Board` to `Game`, and move click handling and winner calculation to `Game`.  `Board` is now just responsible for rendering 9 `Square`s & propagating click events up to `Game`.
 
@@ -157,11 +149,11 @@ Since the `Game` component will require access to `history` to allow for jumping
 
 [See changes to index.jsx](https://github.com/lmfilman/e28/commit/8e46eca26657b7579de8246112b5284dfb78f7f2)
 
-#### Showing the Past Moves
+#### Implementing Time Travel
 
-We want to add list of `<li>` components each containing a `<button>` to jump to a past point in time. Similar to keys in Vue, we need to pass a unique `key` to each component so React can efficiently manage the list.
+In the final portion of the tutorial, we want to add a list of buttons enabling the user to jump to a past point in time.  Similar to keys in Vue, we need to pass a unique `key` to each component so React can efficiently manage the list.
 
-(TODO: talk about `stepNumber`)
+When a user clicks one of these buttons (ex. "Go to move #1"), we set the `stepNumber` and use this value to determine which `squares` board from `history` to display.
 
 [See changes to index.jsx](https://github.com/lmfilman/e28/commit/3b61a50ee1f7b06939592fa7954cb7c7d01d9f80)
 
