@@ -157,6 +157,14 @@ Since the `Game` component will require access to `history` to allow for jumping
 
 [See changes to index.jsx](https://github.com/lmfilman/e28/commit/8e46eca26657b7579de8246112b5284dfb78f7f2)
 
+#### Showing the Past Moves
+
+We want to add list of `<li>` components each containing a `<button>` to jump to a past point in time. Similar to keys in Vue, we need to pass a unique `key` to each component so React can efficiently manage the list.
+
+(TODO: talk about `stepNumber`)
+
+[See changes to index.jsx](https://github.com/lmfilman/e28/commit/3b61a50ee1f7b06939592fa7954cb7c7d01d9f80)
+
 ## Conclusions
 [TODO]
 
