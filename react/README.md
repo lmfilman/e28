@@ -162,15 +162,21 @@ When a user clicks one of these buttons (ex. "Go to move #1"), we set the `stepN
 * ["Comparison with Other Frameworks"](https://vuejs.org/v2/guide/comparison.html) - Article on VueJS.org
 
 ## Conclusions from Tutorial & Readings
-* Both Vue & React have command line tools to bootstrap the creation of a new app (create-react-app vs. vue-cli)
-* Both Vue & React have browser dev tool plugins
-* Both Vue & React embrace the usage of reuseable, modular components
-* Vue's `.vue` single file components incorporate HTML, JS, and CSS, whereas React's `.jsx` files only incorporate HTML & JS.
-* In Vue, we can mutate data directly (`this.foo = 'bar'`).  In React, we cannot alter the data directly, and must call `setState`, like `this.setState({ foo: 'bar' })`.  Vue implements state observation, whereas in React we must explicitly tell the system we are changing the state so that it runs the proper lifecycle hooks & re-renders properly.
-* Vue and React both allow for passing props from parent to child components.  One thing I preferred in Vue over React is that the child component defines the list of props separate from their usage within the component.
-* Vue and React both expect lists of components to use unique keys for efficient list rendering.
-* In Vue, child components emit events which parents listen for.  In React, child components have access to parent functions via `this.props`.
-* Vue and React both have straightforward syntax for defining event handlers, but Vue allows for modifiers (ex. `v-on:keyup.enter`) whereas React does not.
+
+### Similarities
+Both Vue & React...
+* have command line tools to bootstrap the creation of a new app (create-react-app vs. vue-cli)
+* have browser dev tool plugins
+* embrace the usage of reuseable, modular components
+* allow for passing props from parent to child components.
+* expect unique keys when rendering lists of components.
+* have straightforward syntax for event handling
+
+### Differences
+* Vue's single file components (`.vue`) incorporate HTML, JavaScript, and CSS, whereas React's components (`.jsx`) incorporate HTML & JavaScript, but not CSS.
+* Vue allows for directly mutating data (`this.foo = 'bar'`). With React, we cannot alter the data directly, and must call `setState`, ex. `this.setState({ foo: 'bar' })`.  Vue implements state observation, whereas in React we must explicitly tell the system we are changing the state so that it runs the proper lifecycle hooks & re-renders properly.
+* Vue child components emit events which parents listen for.  React child components have access to parent functions via `this.props`.
+* Vue allows for event handling modifiers (ex. `v-on:keyup.enter`) whereas React does not.
 
 
 ## Sources
