@@ -164,7 +164,11 @@ When a user clicks one of these buttons (ex. "Go to move #1"), we set the `stepN
 * Both Vue & React have command line tools to bootstrap the creation of a new app (create-react-app vs. vue-cli)
 * Vue's `.vue` single file components incorporate HTML, JS, and CSS, whereas React's `.jsx` files only incorporate HTML & JS.
 * Vue components store data in `data`, and React components store data in `state`
-* In Vue, we can mutate data directly (`this.foo = 'bar'`).  In React, we cannot alter the data directly, and must call `setState`, like `this.setState({ foo: 'bar' })`.
+* In Vue, we can mutate data directly (`this.foo = 'bar'`).  In React, we cannot alter the data directly, and must call `setState`, like `this.setState({ foo: 'bar' })`.  Vue implements state observation, whereas in React we must explicitly tell the system we are changing the state so that it runs the proper lifecycle hooks & re-renders properly.
+* Vue and React both allow for passing props from parent to child components.  One thing I preferred in Vue over React is that the child component defines the list of props separate from their usage within the component.
+* Vue and React both expect lists of components to use unique keys for efficient list rendering.
+* In Vue, child components emit events which parents listen for.  In React, child components have access to parent functions via `this.props`.
+* Vue and React both have straightforward syntax for defining event handlers, but Vue allows for key modifiers (ex. `v-on:keyup.enter='submitGuess'`) whereas React does not.
 
 
 ## Sources
