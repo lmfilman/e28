@@ -91,18 +91,15 @@ export default {
     }
   },
   mounted: function() {
-    app.api.all('recipes').then(response => {
-      let keys = Object.keys(response);
-      let recipes = keys.map(key => response[key]);
+    let recipes = this.$store.state.recipes;
 
-      let categories = recipes.map(recipe => recipe.categories);
-      let mergedCategories = [].concat.apply([], categories);
-      this.categoryOptions = [...new Set(mergedCategories)].sort();
+    let categories = recipes.map(recipe => recipe.categories);
+    let mergedCategories = [].concat.apply([], categories);
+    this.categoryOptions = [...new Set(mergedCategories)].sort();
 
-      let ingredients = recipes.map(recipe => recipe.ingredients);
-      let mergedIngredients = [].concat.apply([], ingredients);
-      this.ingredientOptions = [...new Set(mergedIngredients)].sort();
-    });
+    let ingredients = recipes.map(recipe => recipe.ingredients);
+    let mergedIngredients = [].concat.apply([], ingredients);
+    this.ingredientOptions = [...new Set(mergedIngredients)].sort();
 
     this.recipe.id = uuid.v1();
   }
