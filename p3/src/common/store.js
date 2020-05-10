@@ -11,7 +11,7 @@ export default new Vuex.Store({
   },
   mutations: {
     updateRecipes(state, payload) {
-      this.recipes = payload;
+      state.recipes = payload;
     }
   },
   actions: {

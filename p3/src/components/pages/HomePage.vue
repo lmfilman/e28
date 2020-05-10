@@ -17,15 +17,12 @@
 </template>
 
 <script>
-import * as app from '@/common/app.js';
-
 export default {
   name: '',
   data: function() {
     return {
       randomRecipe: null,
       showRandom: false,
-      recipes: []
     };
   },
   methods: {
@@ -34,11 +31,10 @@ export default {
       this.randomRecipe = this.recipes[Math.floor(Math.random() * this.recipes.length)];
     },
   },
-  mounted: function() {
-    app.api.all('recipes').then(response => {
-      let keys = Object.keys(response);
-      this.recipes = keys.map(key => response[key]);
-    });
+  computed: {
+    recipes: function() {
+      return this.$store.state.recipes;
+    }
   }
 };
 </script>
