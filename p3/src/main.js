@@ -7,6 +7,8 @@ import RecipesPage from '@/components/pages/RecipesPage.vue'
 import RecipePage from '@/components/pages/RecipePage.vue'
 import HomePage from '@/components/pages/HomePage.vue'
 
+import store from '@/common/store';
+
 Vue.use(VueRouter);
 
 Vue.config.productionTip = false
@@ -24,6 +26,7 @@ const router = new VueRouter({
 })
 
 new Vue({
+  store: store,
   router: router,
   render: h => h(App),
 }).$mount('#app')

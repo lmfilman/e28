@@ -24,6 +24,7 @@ export default {
     }
   },
   mounted: function() {
+    this.$store.dispatch('setRecipes');
   }
 }
 </script>
