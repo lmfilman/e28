@@ -22,7 +22,6 @@
 </template>
 
 <script>
-import * as app from '@/common/app.js';
 import Multiselect from 'vue-multiselect';
 
 export default {
@@ -30,8 +29,6 @@ export default {
   components: { Multiselect },
   data: function() {
     return {
-      categoryOptions: [],
-      recipes: [],
       selectedCategories: []
     };
   },
@@ -42,17 +39,15 @@ export default {
       return new Set([...set1].filter(x => set2.has(x)));
     }
   },
-  mounted: function() {
-    app.api.all('recipes').then(response => {
-      let keys = Object.keys(response);
-      this.recipes = keys.map(key => response[key]);
-
+  computed: {
+    categoryOptions: function() {
       let categories = this.recipes.map(recipe => recipe.categories);
       let mergedCategories = [].concat.apply([], categories);
-      this.categoryOptions = [...new Set(mergedCategories)].sort();
-    });
-  },
-  computed: {
+      return [...new Set(mergedCategories)].sort();
+    },
+    recipes: function() {
+      return this.$store.state.recipes;
+    },
     recipesToDisplay: function() {
       if (this.selectedCategories.length == 0) {
         return this.recipes;
