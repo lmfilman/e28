@@ -18,7 +18,10 @@
     <input type='text' v-model='recipe.reference' id='reference' />
 
     <label for='number-of-times-cooked'>Number of times cooked</label>
-    <input type='number' v-model.number='recipe.numberOfTimesCooked' id='number-of-times-cooked' />
+    <input v-model='$v.recipe.numberOfTimesCooked.$model' id='number-of-times-cooked' />
+    <div v-if='$v.recipe.numberOfTimesCooked.$error'>
+      <div class='form-feedback-error' v-if='!$v.recipe.numberOfTimesCooked.numeric'>Must be a number greater than or equal to 0</div>
+    </div>
 
     <label for='liked'>Liked?</label>
     <input type='checkbox' v-model='recipe.liked' id='liked' />
@@ -46,7 +49,7 @@
 import * as app from '@/common/app.js';
 import Multiselect from 'vue-multiselect';
 import { uuid } from 'vue-uuid';
-import { required } from 'vuelidate/lib/validators'
+import { required, numeric } from 'vuelidate/lib/validators'
 
 
 export default {
@@ -79,6 +82,9 @@ export default {
       },
       referenceType: {
         required
+      },
+      numberOfTimesCooked: {
+        numeric
       }
     }
   },
