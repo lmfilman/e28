@@ -3,7 +3,10 @@
     <h2>Add a Recipe</h2>
 
     <label for='name'>Name</label>
-    <input type='text' v-model='recipe.name' id='name' />
+    <input type='text' v-model='$v.recipe.name.$model' id='name' :class='{ "form-input-error": $v.recipe.name.$error }' />
+    <div v-if='$v.recipe.name.$error'>
+      <div class='form-feedback-error' v-if='!$v.recipe.name.required'>Name is required.</div>
+    </div>
 
     <label for='reference-type'>Reference Type</label>
     <multiselect v-model='recipe.referenceType' :options="referenceTypeOptions" id='reference-type'></multiselect>
@@ -28,6 +31,8 @@
 
     <input type='submit' value='Add' @click.prevent='addRecipe' />
 
+    <div class='form-feedback-error' v-if='$v.$anyError'>Please correct the above errors</div>
+
     <transition name='fade'>
       <div class='alert' v-if='added'>Your product was added!</div>
     </transition>
@@ -38,6 +43,8 @@
 import * as app from '@/common/app.js';
 import Multiselect from 'vue-multiselect';
 import { uuid } from 'vue-uuid';
+import { required } from 'vuelidate/lib/validators'
+
 
 export default {
   name: '',
@@ -62,26 +69,39 @@ export default {
       }
     };
   },
+  validations: {
+    recipe: {
+      name: {
+        required
+      }
+    }
+  },
   methods: {
     addRecipe: function() {
-      app.api.add('recipes', this.recipe).then(id => {
-          console.log('Recipe was added with the id: ' + id);
-          this.added = true;
-          setTimeout(() => (this.added = false), 3000);
-          this.recipe = {
-            name: '',
-            id: uuid.v1(),
-            referenceType: '',
-            reference: '',
-            numberOfTimesCooked: 0,
-            liked: false,
-            ingredients: [],
-            healthiness: [],
-            categories: []
-          }
-      });
+      this.$v.$touch();
 
-      this.$store.dispatch('setRecipes');
+      if(this.$v.$anyError == false) {
+        this.$v.$reset();
+
+        app.api.add('recipes', this.recipe).then(id => {
+            console.log('Recipe was added with the id: ' + id);
+            this.added = true;
+            setTimeout(() => (this.added = false), 3000);
+            this.recipe = {
+              name: '',
+              id: uuid.v1(),
+              referenceType: '',
+              reference: '',
+              numberOfTimesCooked: 0,
+              liked: false,
+              ingredients: [],
+              healthiness: [],
+              categories: []
+            }
+        });
+
+        this.$store.dispatch('setRecipes');
+      }
     },
     addCategory: function(newCategory) {
       this.recipe.categories.push(newCategory);

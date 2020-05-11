@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-
+import Vuelidate from 'vuelidate'
 import App from '@/App.vue'
 import RecipeCreatePage from '@/components/pages/RecipeCreatePage.vue'
 import RecipesPage from '@/components/pages/RecipesPage.vue'
@@ -10,6 +10,7 @@ import HomePage from '@/components/pages/HomePage.vue'
 import store from '@/common/store';
 
 Vue.use(VueRouter);
+Vue.use(Vuelidate);
 
 Vue.config.productionTip = false
 
