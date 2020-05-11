@@ -80,6 +80,8 @@ export default {
             categories: []
           }
       });
+
+      this.$store.dispatch('setRecipes');
     },
     addCategory: function(newCategory) {
       this.recipe.categories.push(newCategory);
