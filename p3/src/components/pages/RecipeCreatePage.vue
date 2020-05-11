@@ -118,10 +118,14 @@ export default {
       }
     },
     addCategory: function(newCategory) {
+      newCategory = newCategory.toLowerCase();
+
       this.recipe.categories.push(newCategory);
       this.categoryOptions.push(newCategory);
     },
     addIngredient: function(newIngredient) {
+      newIngredient = newIngredient.toLowerCase();
+
       this.recipe.ingredients.push(newIngredient);
       this.ingredientOptions.push(newIngredient);
     }
