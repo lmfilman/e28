@@ -44,25 +44,20 @@
 </template>
 
 <script>
-import * as app from '@/common/app.js';
-
 export default {
   name: '',
   props: ['id'],
   data: function() {
     return {
-      recipe: null
     };
-  },
-  mounted: function() {
-    app.api.get('recipes', this.id).then(response => {
-      this.recipe = response;
-    });
   },
   computed: {
     numberOfTimesCookedText: function() {
       let singular = this.recipe.numberOfTimesCooked == 1
       return "Made " + this.recipe.numberOfTimesCooked + " " + (singular ? 'time' : 'times');
+    },
+    recipe: function() {
+      return this.$store.getters.getRecipeById(this.id);
     }
   }
 };

@@ -21,5 +21,16 @@ export default new Vuex.Store({
         context.commit('updateRecipes', keys.map(key => response[key]));
       });
     }
+  },
+  getters: {
+    getRecipeById(state) {
+      return function (id) {
+        for (let key of Object.keys(state.recipes)) {
+          if (state.recipes[key].id == id) {
+            return state.recipes[key];
+          }
+        }
+      }
+    }
   }
 })
