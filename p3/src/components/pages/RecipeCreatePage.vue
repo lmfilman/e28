@@ -5,13 +5,13 @@
     <label for='name'>Name</label>
     <input type='text' v-model='$v.recipe.name.$model' id='name' />
     <div v-if='$v.recipe.name.$error'>
-      <div class='form-feedback-error' v-if='!$v.recipe.name.required'>Name is required.</div>
+      <div class='form-feedback-error' v-if='!$v.recipe.name.required'>This field is required.</div>
     </div>
 
     <label for='reference-type'>Reference Type</label>
     <multiselect v-model='$v.recipe.referenceType.$model' :options="referenceTypeOptions" id='reference-type'></multiselect>
     <div v-if='$v.recipe.referenceType.$error'>
-      <div class='form-feedback-error' v-if='!$v.recipe.referenceType.required'>Reference Type is required.</div>
+      <div class='form-feedback-error' v-if='!$v.recipe.referenceType.required'>This field is required.</div>
     </div>
 
     <label for='reference'>Reference (ex. url, book title & page #)</label>
@@ -20,6 +20,7 @@
     <label for='number-of-times-cooked'>Number of times cooked</label>
     <input v-model='$v.recipe.numberOfTimesCooked.$model' id='number-of-times-cooked' />
     <div v-if='$v.recipe.numberOfTimesCooked.$error'>
+      <div class='form-feedback-error' v-if='!$v.recipe.numberOfTimesCooked.required'>This field is required</div>
       <div class='form-feedback-error' v-if='!$v.recipe.numberOfTimesCooked.numeric'>Must be a number greater than or equal to 0</div>
     </div>
 
@@ -84,6 +85,7 @@ export default {
         required
       },
       numberOfTimesCooked: {
+        required,
         numeric
       }
     }
