@@ -3,13 +3,16 @@
     <h2>Add a Recipe</h2>
 
     <label for='name'>Name</label>
-    <input type='text' v-model='$v.recipe.name.$model' id='name' :class='{ "form-input-error": $v.recipe.name.$error }' />
+    <input type='text' v-model='$v.recipe.name.$model' id='name' />
     <div v-if='$v.recipe.name.$error'>
       <div class='form-feedback-error' v-if='!$v.recipe.name.required'>Name is required.</div>
     </div>
 
     <label for='reference-type'>Reference Type</label>
-    <multiselect v-model='recipe.referenceType' :options="referenceTypeOptions" id='reference-type'></multiselect>
+    <multiselect v-model='$v.recipe.referenceType.$model' :options="referenceTypeOptions" id='reference-type'></multiselect>
+    <div v-if='$v.recipe.referenceType.$error'>
+      <div class='form-feedback-error' v-if='!$v.recipe.referenceType.required'>Reference Type is required.</div>
+    </div>
 
     <label for='reference'>Reference (ex. url, book title & page #)</label>
     <input type='text' v-model='recipe.reference' id='reference' />
@@ -72,6 +75,9 @@ export default {
   validations: {
     recipe: {
       name: {
+        required
+      },
+      referenceType: {
         required
       }
     }
