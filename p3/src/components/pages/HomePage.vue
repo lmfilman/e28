@@ -4,9 +4,9 @@
       <p>This app is for determining what to make for dinner given some recipes we like and some recipes we're interested in trying out.</p>
     </div>
     <div>
-      <button @click='findRandom'>Find random recipe</button>
+      <button data-test='home-page-button' @click='findRandom'>Find random recipe</button>
       <div class='random' v-if='showRandom'>
-        <router-link :to='{name: "recipe", params: {id: randomRecipe.id}}'>
+        <router-link data-test='home-page-recipe-link' :to='{name: "recipe", params: {id: randomRecipe.id}}'>
           <div class='recipe'>
             <div class='recipe-name'>{{ randomRecipe.name }}</div>
           </div>
