@@ -9,4 +9,4 @@
   * <https://docs.cypress.io/api/commands/type.html>
 * Blog post
   * <https://vuejsdevelopers.com/2019/01/22/vue-what-is-next-tick/>
-  * used `Vue.nextTick()` in e2e test`home-page.js` to update the DOM after clicking "Find random recipe" button
+  * used `Vue.nextTick()` in unit test to update the DOM after clicking "Find random recipe" button
