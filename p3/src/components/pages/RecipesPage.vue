@@ -13,7 +13,7 @@
         <div>{{ recipe.name }}</div>
       </div>
       <div class='column recipe-link'>
-        <router-link :to='{name: "recipe", params: {id: recipe.id}}'>
+        <router-link data-test='recipes-page-recipe-link' :to='{name: "recipe", params: {id: recipe.id}}'>
           <img :src='"@/assets/images/web_no_text.png"' style='width:25px'>
         </router-link>
       </div>

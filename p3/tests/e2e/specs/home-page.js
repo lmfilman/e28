@@ -13,6 +13,6 @@ describe('home-page', () => {
     cy.get('[data-test="home-page-recipe-link"]').click({ force: true });
 
     // Verify on recipe page
-    cy.get('#recipe-page');
+    cy.get('#recipe-page').should('exist');;
   })
 })

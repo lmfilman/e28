@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id='add-a-recipe'>
     <h2>Add a Recipe</h2>
 
     <label for='name'>Name</label>
@@ -36,12 +36,14 @@
     <label for='categories'>Categories</label>
     <multiselect v-model='recipe.categories' :options="categoryOptions" :multiple="true" :taggable="true" id='categories' @tag="addCategory"></multiselect>
 
-    <input type='submit' value='Add' @click.prevent='addRecipe' />
+    <input data-test='create-recipe-submit' type='submit' value='Add' @click.prevent='addRecipe' />
 
-    <div class='form-feedback-error' v-if='$v.$anyError'>Please correct the above errors</div>
+    <div data-test='create-recipe-form-errors' class='form-feedback-error' v-if='$v.$anyError'>
+      Please correct the above errors
+    </div>
 
     <transition name='fade'>
-      <div class='alert' v-if='added'>Your product was added!</div>
+      <div data-test='create-recipe-success' class='alert' v-if='added'>Your product was added!</div>
     </transition>
   </div>
 </template>
