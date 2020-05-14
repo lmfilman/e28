@@ -1,4 +1,4 @@
-# Project 2
+# Project 3
 + By: Laura Filmeyer
 + Production URL: <https://p3.filmeyer.me>
 
