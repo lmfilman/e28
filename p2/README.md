@@ -1,6 +1,5 @@
 # Project 2
 + By: Laura Filmeyer
-+ Production URL: <http://p2.filmeyer.me>
 
 ## Pages summary
 * Home - describes the purpose of the app, and lets the user find a random recipe
