@@ -1,6 +1,6 @@
 # Project 3
 + By: Laura Filmeyer
-+ Production URL: <https://p3.filmeyer.me>
++ Production URL: https://vigorous-neumann-6f0cbf.netlify.app/ 
 
 ## Outside resources
 * Vue test utils guide
