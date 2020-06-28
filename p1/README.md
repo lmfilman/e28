@@ -1,6 +1,5 @@
 # Project 1
 + By: Laura Filmeyer (nee Filman)
-+ Production URL: <http://p1.filmeyer.me/>
 
 ## How the game works
 
